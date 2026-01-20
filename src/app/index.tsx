@@ -12,7 +12,7 @@ export default function Index() {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
-      <Text>ああああああ</Text>
+      <Text className="text-red-500">ああああああ</Text>
       <Button title="ああああ111" />
       <H1>aaa</H1>
     </View>
