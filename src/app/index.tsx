@@ -1,4 +1,6 @@
 import { Text, View } from "react-native";
+import { Button } from "react-native";
+import { H1 } from '@expo/html-elements';
 
 export default function Index() {
   return (
@@ -10,6 +12,9 @@ export default function Index() {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>ああああああ</Text>
+      <Button title="ああああ111" />
+      <H1>aaa</H1>
     </View>
   );
 }
