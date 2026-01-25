@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import { Button } from "react-native";
-import { H1 } from '@expo/html-elements';
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
@@ -12,9 +12,12 @@ export default function Index() {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
-      <Text className="text-red-500">ああああああ</Text>
-      <Button title="ああああ111" />
-      <H1>aaa</H1>
+      <Text className="text-blue-500">ああああああ</Text>
+      <View className="bg-green-500">
+        <Button title="ああああ111" />
+      </View>
+      <Text className="text-3xl font-bold">aaa</Text>
+      <Link href="/bigButton">bigButton</Link>
     </View>
   );
 }
