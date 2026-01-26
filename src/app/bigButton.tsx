@@ -25,15 +25,9 @@ export default function BigButton() {
       />
       <View className="flex h-full w-full items-center justify-center">
         <BigFrame />
-        <EditFrame
-          size="small"
-        />
-        <EditFrame
-          size="medium"
-        />
-        <EditFrame
-          size="big"
-        />
+        <EditFrame size="small" />
+        <EditFrame size="medium" />
+        <EditFrame size="big" />
       </View>
     </View>
   );
