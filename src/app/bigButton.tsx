@@ -2,6 +2,7 @@ import { Text, View, StyleSheet } from "react-native";
 import { VideoView, useVideoPlayer } from "expo-video";
 import BigFrame from "@/components/ui/bigFrame";
 import { cssInterop } from "nativewind";
+import EditFrame from "@/components/ui/edit-frame";
 
 const bgWhetherVideo = require("@/assets/whether-mov/128879_960x540.mp4");
 
@@ -24,6 +25,15 @@ export default function BigButton() {
       />
       <View className="w-full h-full flex items-center justify-center">
         <BigFrame />
+        <EditFrame
+          size="small"
+        />
+        <EditFrame
+          size="medium"
+        />
+        <EditFrame
+          size="big"
+        />
       </View>
     </View>
   );
