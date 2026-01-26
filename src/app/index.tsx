@@ -18,6 +18,7 @@ export default function Index() {
       </View>
       <Text className="text-3xl font-bold">aaa</Text>
       <Link href="/bigButton">bigButton</Link>
+      <Link href="/smallButton">smallButton</Link>
     </View>
   );
 }
