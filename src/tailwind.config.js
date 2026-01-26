@@ -14,11 +14,11 @@ module.exports = {
       //   white: "rgba(255, 255, 255, 0.30)",
       // },
       spacing: {
-        "1": "4px",
-        "2": "8px",
-        "3": "16px",
-        "4": "32px",
-        "5": "64px",
+        1: "4px",
+        2: "8px",
+        3: "16px",
+        4: "32px",
+        5: "64px",
       },
       // テキスト用の影（React NativeではboxShadowと共通化できないため）
       textShadow: {

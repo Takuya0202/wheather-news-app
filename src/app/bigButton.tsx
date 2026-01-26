@@ -22,7 +22,7 @@ export default function BigButton() {
         nativeControls={false}
         style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
       />
-      <View className="w-full h-full flex items-center justify-center">
+      <View className="flex h-full w-full items-center justify-center">
         <BigFrame />
       </View>
     </View>
