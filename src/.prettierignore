@@ -1,0 +1,29 @@
+# 依存関係
+node_modules/
+
+# ビルド出力
+dist/
+build/
+.expo/
+android/
+ios/
+web-build/
+
+# キャッシュ
+.cache/
+*.log
+
+# 設定ファイル
+*.json
+*.lock
+.env*
+*.d.ts
+
+# Expo 生成ファイル
+expo-env.d.ts
+nativewind-env.d.ts
+
+# その他
+.git/
+coverage/
+.prettierrc
