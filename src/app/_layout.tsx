@@ -3,11 +3,13 @@ import { View } from "react-native";
 import { cssInterop } from "nativewind";
 import "../global.css";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-
+import { GlassView } from "expo-glass-effect";
 cssInterop(View, {
   className: "style",
 });
-
+cssInterop(GlassView, {
+  className: "style",
+});
 export default function RootLayout() {
   return (
     <SafeAreaProvider>

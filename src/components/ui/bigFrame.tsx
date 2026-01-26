@@ -3,9 +3,6 @@ import { Text, View } from "react-native";
 import { cssInterop } from "nativewind";
 import { Image } from "expo-image";
 
-cssInterop(GlassView, {
-  className: "style",
-});
 cssInterop(Image, {
   className: "style",
 });
