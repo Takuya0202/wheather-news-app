@@ -20,11 +20,29 @@ export default function BigButton() {
         player={video}
         contentFit="cover"
         nativeControls={false}
-        pointerEvents="none"
         style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
       />
-      <View className="w-full h-full flex flex-col items-center justify-center">
-        {/* <LargeFrame /> */}
+      <View className="flex h-full w-full flex-col items-center justify-center">
+        <LargeFrame
+          title="気温"
+          image={require("@/assets/whether-img/27218923_1.png")}
+          First={{
+            title: "最低",
+            textColor: "blue",
+            numberValue: {
+              number: 17,
+              value: "℃",
+            },
+          }}
+          Second={{
+            title: "最高",
+            textColor: "red",
+            numberValue: {
+              number: 13,
+              value: "℃",
+            },
+          }}
+        />
         <MediumFrame />
       </View>
     </View>
