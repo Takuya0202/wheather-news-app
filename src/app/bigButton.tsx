@@ -43,7 +43,26 @@ export default function BigButton() {
             },
           }}
         />
-        <MediumFrame />
+        <MediumFrame
+          title="あああ"
+          image={require("@/assets/whether-img/27218923_1.png")}
+          First={{
+            title: "最低",
+            textColor: "blue",
+            numberValue: {
+              number: 53,
+              value: "℃",
+            },
+          }}
+          Second={{
+            title: "最高",
+            textColor: "red",
+            numberValue: {
+              number: 13,
+              value: "℃",
+            },
+          }}
+        />
       </View>
     </View>
   );
