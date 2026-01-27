@@ -10,9 +10,10 @@ module.exports = {
       minHeight: {
         standard: "44",
       },
-      // colors: {
-      //   white: "rgba(255, 255, 255, 0.30)",
-      // },
+      colors: {
+        blue: "#74C5FF",
+        red: "#E98383",
+      },
       spacing: {
         1: "4px",
         2: "8px",
@@ -22,11 +23,14 @@ module.exports = {
       },
       // テキスト用の影（React NativeではboxShadowと共通化できないため）
       textShadow: {
-        white: "2 2 4 rgba(255, 255, 255, 0.5)",
+        white: "1 1 2 rgba(255, 255, 255, 0.35)",
       },
       // 枠（View）用の影
       boxShadow: {
         shadow: "2 2 4 rgba(0, 0, 0, 0.4)",
+      },
+      fontFamily: {
+        notoSansJP: "NotoSansJP_400Regular",
       },
     },
   },
@@ -38,7 +42,10 @@ module.exports = {
         const parts = value.split(" ");
         return {
           [`.text-shadow-${key}`]: {
-            textShadowOffset: { width: parseFloat(parts[0]), height: parseFloat(parts[1]) },
+            textShadowOffset: {
+              width: parseFloat(parts[0]),
+              height: parseFloat(parts[1]),
+            },
             textShadowRadius: parseFloat(parts[2]),
             textShadowColor: parts.slice(3).join(" "),
           },
@@ -51,7 +58,10 @@ module.exports = {
         const parts = value.split(" ");
         return {
           [`.shadow-${key}`]: {
-            shadowOffset: { width: parseFloat(parts[0]), height: parseFloat(parts[1]) },
+            shadowOffset: {
+              width: parseFloat(parts[0]),
+              height: parseFloat(parts[1]),
+            },
             shadowRadius: parseFloat(parts[2]),
             shadowColor: parts.slice(3).join(" "),
             shadowOpacity: 1, // 色の方にalphaが含まれている想定
