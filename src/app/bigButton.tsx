@@ -1,8 +1,8 @@
 import { VideoView, useVideoPlayer } from "expo-video";
-import LargeFrame from "@/components/ui/largeFrame";
-import MediumFrame from "@/components/ui/mediumFlame";
+import LargeFrame from "@/components/ui/content/large/largeFrame";
+import MediumFrame from "@/components/ui/content/large/mediumFlame";
 import { View, StyleSheet } from "react-native";
-import Temperature from "@/components/ui/content/temperature";
+import Temperature from "@/components/ui/content/large/temperature";
 
 const bgWhetherVideo = require("@/assets/whether-mov/128879_960x540.mp4");
 
