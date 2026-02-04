@@ -1,13 +1,13 @@
-import { GlassView, View, StyleSheet } from "../../../index";
+import { GlassView, View, StyleSheet } from "../index";
 import React from "react";
-import Temperature from "./temperature";
-import SensibleTemperature from "./sensibleTemperature";
-import Clothing from "./clothing";
-import Humidity from "./humidity";
-import WindSpeed from "./windSpeed";
-import PrecipitationProbability from "./precipitationProbability";
-import Laundry from "./laundry";
-import Stimulation from "./stimulation";
+import Temperature from "../content/large/temperature";
+import SensibleTemperature from "../content/large/sensibleTemperature";
+import Clothing from "../content/large/clothing";
+import Humidity from "../content/large/humidity";
+import WindSpeed from "../content/large/windSpeed";
+import PrecipitationProbability from "../content/large/precipitationProbability";
+import Laundry from "../content/large/laundry";
+import Stimulation from "../content/large/stimulation";
 import { ScrollView } from "react-native";
 
 export default function LargeFrame({ children }: { children?: React.ReactNode }) {
