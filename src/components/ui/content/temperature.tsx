@@ -6,7 +6,7 @@ export default function Temperature() {
       <Text className="text-center font-notoSansJP text-[28px] text-[#CDCDCD]">気温</Text>
       <View className="flex items-center justify-center">
         <Image
-          source={require("@/assets/whether-img/27218923_1.png")}
+          source={require("@/assets/whether-img/temperature.png")}
           className="h-[130px] w-[130px]"
         />
       </View>
