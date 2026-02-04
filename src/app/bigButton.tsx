@@ -2,6 +2,7 @@ import { VideoView, useVideoPlayer } from "expo-video";
 import LargeFrame from "@/components/ui/largeFrame";
 import MediumFrame from "@/components/ui/mediumFlame";
 import { View, StyleSheet } from "react-native";
+import Temperature from "@/components/ui/content/temperature";
 
 const bgWhetherVideo = require("@/assets/whether-mov/128879_960x540.mp4");
 
@@ -23,9 +24,8 @@ export default function BigButton() {
         pointerEvents="none"
         style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
       />
-      <View className="flex h-full w-full flex-col items-center justify-center">
+      <View className="flex h-full w-full flex-col items-center justify-center gap-4">
         <LargeFrame />
-        <MediumFrame />
       </View>
     </View>
   );
