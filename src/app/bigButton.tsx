@@ -4,7 +4,8 @@ import MediumFrame from "@/components/ui/content/large/mediumFlame";
 import { View, StyleSheet } from "react-native";
 import Temperature from "@/components/ui/content/large/temperature";
 
-const bgWhetherVideo = require("@/assets/whether-mov/128879_960x540.mp4");
+// Force refresh
+const bgWhetherVideo = require("@/assets/whether-mov/45125_960x540.mp4");
 
 export default function BigButton() {
   const video = useVideoPlayer(bgWhetherVideo, (videoPlayer) => {
@@ -22,7 +23,7 @@ export default function BigButton() {
         contentFit="cover"
         nativeControls={false}
         pointerEvents="none"
-        style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
+        style={[StyleSheet.absoluteFill, { width: "100%", height: "100%", opacity: 0.7 }]}
       />
       <View className="flex h-full w-full flex-col items-center justify-center gap-4">
         <LargeFrame />

@@ -3,7 +3,7 @@ import { Image, Text, View } from "@/components/index";
 export default function Laundry() {
   return (
     <View>
-      <Text className="text-center font-notoSansJP text-[28px] text-[#CDCDCD]">洗濯</Text>
+      <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">洗濯</Text>
       <View className="flex items-center justify-center">
         <Image
           source={require("@/assets/whether-img/laundry.png")}
@@ -18,7 +18,7 @@ export default function Laundry() {
             contentFit="contain"
           />
         </View>
-        <Text className="notoSansJP w-[110px] text-[24px] text-[#CDCDCD]">注意が必要</Text>
+        <Text className="notoSansJP w-[110px] text-[24px] text-[#000000]">注意が必要</Text>
       </View>
     </View>
   );

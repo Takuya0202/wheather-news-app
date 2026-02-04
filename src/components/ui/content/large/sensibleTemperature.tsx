@@ -3,7 +3,7 @@ import { Image, Text, View } from "@/components/index";
 export default function SensibleTemperature() {
   return (
     <View>
-      <Text className="text-center font-notoSansJP text-[28px] text-[#CDCDCD]">体感温度</Text>
+      <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">体感温度</Text>
       <View className="flex items-center justify-center">
         <Image
           // 画像はあまり納得いってないが仮で配置してます
