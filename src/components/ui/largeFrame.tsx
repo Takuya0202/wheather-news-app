@@ -1,6 +1,7 @@
 import { GlassView, View, StyleSheet } from "../index";
 import React from "react";
-import Temperature from "./content/temperature";
+// import Temperature from "./content/temperature";
+import SensibleTemperature from "./content/sensibleTemperature";
 
 export default function LargeFrame({ children }: { children?: React.ReactNode }) {
   const styles = StyleSheet.create({
@@ -15,7 +16,7 @@ export default function LargeFrame({ children }: { children?: React.ReactNode })
         glassEffectStyle="clear"
         style={styles.tintedGlassView}
       >
-        <Temperature />
+        <SensibleTemperature />
         {children}
       </GlassView>
     </View>
