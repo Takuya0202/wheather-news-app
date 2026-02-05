@@ -1,4 +1,4 @@
-import { GlassView, Image, Text, View, StyleSheet } from "../index";
+import { GlassView, Image, Text, View, StyleSheet } from "../../../index";
 
 export default function MediumFrame() {
   const styles = StyleSheet.create({
