@@ -1,16 +1,17 @@
 import { GlassView, View, StyleSheet } from "../index";
 import React from "react";
-import Temperature from "../content/large/temperature";
-import SensibleTemperature from "../content/large/sensibleTemperature";
-import Clothing from "../content/large/clothing";
-import Humidity from "../content/large/humidity";
-import WindSpeed from "../content/large/windSpeed";
-import PrecipitationProbability from "../content/large/precipitationProbability";
-import Laundry from "../content/large/laundry";
-import Stimulation from "../content/large/stimulation";
-import { ScrollView } from "react-native";
+import {
+  Clothing,
+  Humidity,
+  Laundry,
+  PrecipitationProbability,
+  SensibleTemperature,
+  Stimulation,
+  Temperature,
+  WindSpeed,
+} from "../content/large";
 
-export default function LargeFrame({ children }: { children?: React.ReactNode }) {
+export default function LargeFrame() {
   const styles = StyleSheet.create({
     tintedGlassView: {
       backgroundColor: "rgba(255, 255, 255, 0.2)",
@@ -27,25 +28,17 @@ export default function LargeFrame({ children }: { children?: React.ReactNode })
     <Stimulation />,
   ];
   return (
-    <View className="flex h-full w-width items-center rounded-[12px]">
-      <ScrollView
-        horizontal={false}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        bounces={false}
-        contentContainerClassName="items-center flex gap-4"
-      >
-        {largeFrameList.map((item, index) => (
-          <GlassView
-            key={index}
-            className="flex h-[257px] w-width items-center justify-center rounded-[12px]"
-            glassEffectStyle="clear"
-            style={styles.tintedGlassView}
-          >
-            {item}
-          </GlassView>
-        ))}
-      </ScrollView>
+    <View className="flex w-width items-center gap-[24px] rounded-[12px]">
+      {largeFrameList.map((item, index) => (
+        <GlassView
+          key={index}
+          className="flex h-[257px] w-width items-center justify-center rounded-[12px]"
+          glassEffectStyle="clear"
+          style={styles.tintedGlassView}
+        >
+          {item}
+        </GlassView>
+      ))}
     </View>
   );
 }
