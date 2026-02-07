@@ -1,6 +1,6 @@
 import { Image, Text, View } from "@/components/index";
 
-export default function Temperature() {
+export default function SensibleTemperature() {
   return (
     <View className="flex justify-between p-2">
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">体感温度</Text>
