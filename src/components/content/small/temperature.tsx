@@ -3,7 +3,7 @@ import { Image, Text, View } from "@/components/index";
 export default function Temperature() {
   return (
     <View className="flex justify-between p-2">
-      <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">気温</Text>
+      <Text className="text-center font-notoSansJP text-[20px] text-[#000000]">気温</Text>
       <View className="flex items-center justify-center">
         <Image
           source={require("@/assets/whether-img/temperature.png")}
