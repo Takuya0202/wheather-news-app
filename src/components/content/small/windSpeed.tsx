@@ -11,7 +11,6 @@ export default function WindSpeed() {
         />
       </View>
       <View className="flex flex-row items-baseline justify-center">
-        {/* 最高温度 */}
         <Text className="notoSansJP text-[36px] font-bold text-[#000000]">13</Text>
         <Text className="notoSansJP text-[24px] font-bold text-[#000000]">m</Text>
       </View>

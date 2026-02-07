@@ -13,14 +13,12 @@ export default function SensibleTemperature() {
       <View className="flex w-fit flex-row justify-between gap-3">
         <View className="flex flex-col ">
           <View className="flex flex-row items-baseline">
-            {/* 最低温度 */}
             <Text className="notoSansJP text-[36px] font-bold text-blue">13</Text>
             <Text className="notoSansJP text-[24px] font-bold text-blue">℃</Text>
           </View>
         </View>
         <View className="flex flex-col ">
           <View className="flex flex-row items-baseline">
-            {/* 最高温度 */}
             <Text className="notoSansJP text-[36px] font-bold text-red">13</Text>
             <Text className="notoSansJP text-[24px] font-bold text-red">℃</Text>
           </View>
