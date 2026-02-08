@@ -16,10 +16,7 @@ export default function Temperature() {
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">気温</Text>
       <View className="flex items-center justify-center">
-        <Image
-          source={require("@/assets/whether-img/temperature.png")}
-          className="h-[130px] w-[130px]"
-        />
+        <Image source={data?.icon_url} className="h-[130px] w-[130px]" />
       </View>
       <View className="flex h-fit w-[235px] flex-row items-end justify-between">
         <View className="flex flex-col ">
