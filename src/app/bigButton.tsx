@@ -13,17 +13,18 @@ export default function BigButton() {
     videoPlayer.loop = true;
     // 読み込まれたらビデオを再生
     videoPlayer.play();
+    videoPlayer.playbackRate = 0.3;
   });
 
   return (
-    <View className="relative flex-1">
+    <View className="relative flex-1 bg-black/20">
       {/* nativeControls={false}で動画のコントロールボタンを制御 */}
       <VideoView
         player={video}
         contentFit="cover"
         nativeControls={false}
         pointerEvents="none"
-        style={[StyleSheet.absoluteFill, { width: "100%", height: "100%", opacity: 0.7 }]}
+        style={[StyleSheet.absoluteFill, { width: "100%", height: "100%", opacity: 0.6 }]}
       />
       <View className="flex h-full w-full flex-col items-center justify-center gap-4">
         <LargeFrame />
