@@ -1,6 +1,14 @@
 import { Image, Text, View } from "@/components/index";
+import { useEffect, useState } from "react";
+import laundry, { LaundryApi } from "@/lib/status/laundry";
 
 export default function Laundry() {
+  const [data, setData] = useState<LaundryApi | null>(null);
+  useEffect(() => {
+    laundry().then((data) => {
+      setData(data);
+    });
+  }, []);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">洗濯</Text>
@@ -18,7 +26,7 @@ export default function Laundry() {
             contentFit="contain"
           />
         </View>
-        <Text className="notoSansJP w-[110px] text-[24px] text-[#000000]">注意が必要</Text>
+        <Text className="notoSansJP w-[110px] text-[24px] text-[#000000]">{data?.message}</Text>
       </View>
     </View>
   );
