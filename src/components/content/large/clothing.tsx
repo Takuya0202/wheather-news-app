@@ -1,6 +1,7 @@
 import { Image, Text, View } from "@/components/index";
+import { WeatherData } from "@/lib/index";
 
-export default function Clothing() {
+export default function Clothing({ data }: { data?: WeatherData | null }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">服装の提案</Text>

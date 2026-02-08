@@ -1,14 +1,7 @@
 import { Image, Text, View } from "@/components/index";
-import { useEffect, useState } from "react";
-import laundry, { LaundryApi } from "@/lib/status/laundry";
+import { LaundryApi as LaundryData } from "@/lib/index";
 
-export default function Laundry() {
-  const [data, setData] = useState<LaundryApi | null>(null);
-  useEffect(() => {
-    laundry().then((data) => {
-      setData(data);
-    });
-  }, []);
+export default function Laundry({ data }: { data?: LaundryData }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">洗濯</Text>

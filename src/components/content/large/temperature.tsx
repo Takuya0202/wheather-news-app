@@ -1,17 +1,7 @@
 import { Image, Text, View } from "@/components/index";
-import temperature, { TemperatureApi as TemperatureData } from "@/lib/status/temperature";
-import { useEffect, useState } from "react";
+import { TemperatureApi as TemperatureData } from "@/lib/index";
 
-export default function Temperature() {
-  const [data, setData] = useState<TemperatureData>();
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(true);
-    temperature().then((res) => {
-      setData(res);
-      setLoading(false);
-    });
-  }, []);
+export default function Temperature({ data }: { data?: TemperatureData }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">気温</Text>

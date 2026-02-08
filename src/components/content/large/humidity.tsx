@@ -1,17 +1,7 @@
 import { Image, Text, View } from "@/components/index";
-import fetchHumidity, { HumidityApi as HumidityData } from "@/lib/status/humidity";
-import { useEffect, useState } from "react";
+import { HumidityApi as HumidityData } from "@/lib/index";
 
-export default function Humidity() {
-  const [data, setData] = useState<HumidityData>();
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(true);
-    fetchHumidity().then((res) => {
-      setData(res);
-      setLoading(false);
-    });
-  }, []);
+export default function Humidity({ data }: { data?: HumidityData }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">湿度</Text>

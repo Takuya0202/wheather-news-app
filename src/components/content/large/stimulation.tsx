@@ -1,14 +1,7 @@
 import { Image, Text, View } from "@/components/index";
-import { useEffect, useState } from "react";
-import atomos, { AtomosApi } from "@/lib/status/atomos";
+import { AtomosApi as AtomosData } from "@/lib/index";
 
-export default function Stimulation() {
-  const [data, setData] = useState<AtomosApi | null>(null);
-  useEffect(() => {
-    atomos().then((data) => {
-      setData(data);
-    });
-  }, []);
+export default function Stimulation({ data }: { data?: AtomosData }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">刺激</Text>

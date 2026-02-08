@@ -1,8 +1,6 @@
 import { VideoView, useVideoPlayer } from "expo-video";
 import LargeFrame from "@/components/ui/largeFrame";
-import MediumFrame from "@/components/content/large/mediumFlame";
 import { View, StyleSheet } from "react-native";
-import Temperature from "@/components/content/large/temperature";
 
 // Force refresh
 const bgWhetherVideo = require("@/assets/whether-mov/45125_960x540.mp4");

@@ -1,17 +1,7 @@
 import { Image, Text, View } from "@/components/index";
-import windSpeed, { WindSpeedApi } from "@/lib/status/windSpeed";
-import { useEffect, useState } from "react";
+import { WindSpeedApi as WindSpeedData } from "@/lib/index";
 
-export default function WindSpeed() {
-  const [data, setData] = useState<WindSpeedApi>();
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(true);
-    windSpeed().then((res) => {
-      setData(res);
-      setLoading(false);
-    });
-  }, []);
+export default function WindSpeed({ data }: { data?: WindSpeedData }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">風速</Text>

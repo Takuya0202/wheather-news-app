@@ -1,17 +1,7 @@
 import { Image, Text, View } from "@/components/index";
-import rain, { RainApi } from "@/lib/status/rain";
-import { useEffect, useState } from "react";
+import { RainApi as RainData } from "@/lib/index";
 
-export default function PrecipitationProbability() {
-  const [data, setData] = useState<RainApi>();
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(true);
-    rain().then((res) => {
-      setData(res);
-      setLoading(false);
-    });
-  }, []);
+export default function PrecipitationProbability({ data }: { data?: RainData }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">降水確率</Text>
