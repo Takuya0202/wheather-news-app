@@ -1,6 +1,17 @@
 import { Image, Text, View } from "@/components/index";
+import fetchHumidity, { HumidityApi as HumidityData } from "@/lib/status/humidity";
+import { useEffect, useState } from "react";
 
 export default function Humidity() {
+  const [data, setData] = useState<HumidityData>();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    fetchHumidity().then((res) => {
+      setData(res);
+      setLoading(false);
+    });
+  }, []);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">湿度</Text>
@@ -12,11 +23,11 @@ export default function Humidity() {
       </View>
       <View className="flex w-[235px] flex-row items-center justify-between">
         <View className="flex flex-row items-baseline">
-          <Text className="notoSansJP text-[48px] font-bold text-[#000000]">55</Text>
+          <Text className="notoSansJP text-[48px] font-bold text-[#000000]">{data?.current_h}</Text>
           <Text className="notoSansJP text-[20px] font-bold text-[#000000]">%</Text>
         </View>
-        <Text className="notoSansJP w-[120px] text-[16px] text-[#000000]">
-          今日は少し髪がパサつくでしょう
+        <Text className="notoSansJP text-bold w-[120px] text-[16px] text-[#000000]">
+          {data?.message}
         </Text>
       </View>
     </View>
