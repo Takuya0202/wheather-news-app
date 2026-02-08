@@ -1,6 +1,17 @@
 import { Image, Text, View } from "@/components/index";
+import temperature, { TemperatureApi as TemperatureData } from "@/lib/status/temperature";
+import { useEffect, useState } from "react";
 
 export default function Temperature() {
+  const [data, setData] = useState<TemperatureData>();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    temperature().then((res) => {
+      setData(res);
+      setLoading(false);
+    });
+  }, []);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">気温</Text>
@@ -15,7 +26,7 @@ export default function Temperature() {
           <Text className=" notoSansJP text-[16px] text-blue">最低</Text>
           <View className="flex flex-row items-baseline">
             {/* 最低温度 */}
-            <Text className="notoSansJP text-[36px] font-bold text-blue">13</Text>
+            <Text className="notoSansJP text-[36px] font-bold text-blue">{data?.min_temp}</Text>
             <Text className="notoSansJP text-[24px] font-bold text-blue">℃</Text>
           </View>
         </View>
@@ -23,7 +34,7 @@ export default function Temperature() {
           <Text className=" notoSansJP text-[16px] text-red">最高</Text>
           <View className="flex flex-row items-baseline">
             {/* 最高温度 */}
-            <Text className="notoSansJP text-[36px] font-bold text-red">13</Text>
+            <Text className="notoSansJP text-[36px] font-bold text-red">{data?.max_temp}</Text>
             <Text className="notoSansJP text-[24px] font-bold text-red">℃</Text>
           </View>
         </View>
