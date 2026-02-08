@@ -20,6 +20,7 @@ export default function Laundry() {
       </View>
       <View className="flex w-[235px] flex-row items-center justify-between">
         <View className="flex flex-row items-baseline gap-2">
+          {/* 後にステータスごとに表示を切り替えるようにする */}
           <Image
             source={require("@/assets/whether-img/triangle.svg")}
             className="h-[55px] w-[55px]"
