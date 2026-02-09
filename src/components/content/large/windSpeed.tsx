@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@/components/index";
-import { WindSpeedApi as WindSpeedData } from "@/lib/index";
+import { useWhetherStore } from "@/store/whetherStore";
 
-export default function WindSpeed({ data }: { data?: WindSpeedData }) {
+export default function WindSpeed() {
+  const data = useWhetherStore((state) => state.wind);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">風速</Text>

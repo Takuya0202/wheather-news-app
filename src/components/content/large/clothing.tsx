@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@/components/index";
-import { WeatherData } from "@/lib/index";
+import { useWhetherStore } from "@/store/whetherStore";
 
-export default function Clothing({ data }: { data?: WeatherData | null }) {
+export default function Clothing() {
+  const data = useWhetherStore((state) => state.laundry);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">服装の提案</Text>
@@ -13,9 +14,7 @@ export default function Clothing({ data }: { data?: WeatherData | null }) {
         />
       </View>
       <View className="flex w-[235px] flex-row justify-between">
-        <Text className=" notoSansJP text-[16px] text-[#000000]">
-          今日は半袖でも過ごしやすいような一日になるでしょう。
-        </Text>
+        <Text className=" notoSansJP text-[16px] text-[#000000]">{data?.message}</Text>
       </View>
     </View>
   );
