@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@/components/index";
-import { AtomosApi as AtomosData } from "@/lib/index";
+import { useWhetherStore } from "@/store/whetherStore";
 
-export default function Stimulation({ data }: { data?: AtomosData }) {
+export default function Stimulation() {
+  const data = useWhetherStore((state) => state.atomos);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">刺激</Text>

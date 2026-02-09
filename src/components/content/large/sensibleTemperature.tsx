@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@/components/index";
-import { TemperatureApi as TemperatureData } from "@/lib/index";
+import { useWhetherStore } from "@/store/whetherStore";
 
-export default function SensibleTemperature({ data }: { data?: TemperatureData }) {
+export default function SensibleTemperature() {
+  const data = useWhetherStore((state) => state.temperature);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">体感温度</Text>

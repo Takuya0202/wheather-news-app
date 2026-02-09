@@ -1,5 +1,5 @@
 import { GlassView, View, StyleSheet } from "../index";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Temperature from "../content/large/temperature";
 import SensibleTemperature from "../content/large/sensibleTemperature";
 import Clothing from "../content/large/clothing";
@@ -9,36 +9,24 @@ import PrecipitationProbability from "../content/large/precipitationProbability"
 import Laundry from "../content/large/laundry";
 import Stimulation from "../content/large/stimulation";
 import { ScrollView } from "react-native";
-import fetchWeather, { WeatherData } from "@/lib";
+import { useWhetherStore } from "@/store/whetherStore";
 
 export default function LargeFrame() {
-  const [data, setData] = useState<WeatherData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchWeather()
-      .then((res) => {
-        if (res) setData(res);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-
   const styles = StyleSheet.create({
     tintedGlassView: {
       backgroundColor: "rgba(255, 255, 255, 0.2)",
     },
   });
+
   const largeFrameList = [
-    <Temperature data={data?.temperature} />,
-    <SensibleTemperature data={data?.temperature} />,
-    <Clothing data={data} />,
-    <Humidity data={data?.humidity} />,
-    <WindSpeed data={data?.wind} />,
-    <PrecipitationProbability data={data?.rain} />,
-    <Laundry data={data?.laundry} />,
-    <Stimulation data={data?.atomos} />,
+    <Temperature />,
+    <SensibleTemperature />,
+    <Clothing />,
+    <Humidity />,
+    <WindSpeed />,
+    <PrecipitationProbability />,
+    <Laundry />,
+    <Stimulation />,
   ];
 
   return (

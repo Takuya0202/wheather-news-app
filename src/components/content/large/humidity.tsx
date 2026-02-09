@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@/components/index";
-import { HumidityApi as HumidityData } from "@/lib/index";
+import { useWhetherStore } from "@/store/whetherStore";
 
-export default function Humidity({ data }: { data?: HumidityData }) {
+export default function Humidity() {
+  const data = useWhetherStore((state) => state.humidity);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">湿度</Text>
