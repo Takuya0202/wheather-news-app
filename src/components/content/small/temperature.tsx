@@ -1,20 +1,17 @@
 import { Image, Text, View } from "@/components/index";
-import { TemperatureApi as TemperatureData } from "@/lib/index";
 
-export default function SensibleTemperature({ data }: { data?: TemperatureData }) {
+export default function Temperature() {
   return (
-    <View>
-      <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">体感温度</Text>
+    <View className="flex justify-between p-2">
+      <Text className="text-center font-notoSansJP text-[20px] text-[#000000]">気温</Text>
       <View className="flex items-center justify-center">
         <Image
-          // 画像はあまり納得いってないが仮で配置してます
-          source={require("@/assets/whether-img/sensibleTemperature.png")}
-          className="h-[130px] w-[130px]"
+          source={require("@/assets/whether-img/temperature.png")}
+          className="h-[90px] w-[90px]"
         />
       </View>
-      <View className="flex w-[235px] flex-row justify-between">
+      <View className="flex w-fit flex-row justify-between gap-3">
         <View className="flex flex-col ">
-          <Text className=" notoSansJP text-[16px] text-blue">最低</Text>
           <View className="flex flex-row items-baseline">
             {/* 最低温度 */}
             <Text className="notoSansJP text-[36px] font-bold text-blue">13</Text>
@@ -22,7 +19,6 @@ export default function SensibleTemperature({ data }: { data?: TemperatureData }
           </View>
         </View>
         <View className="flex flex-col ">
-          <Text className=" notoSansJP text-[16px] text-red">最高</Text>
           <View className="flex flex-row items-baseline">
             {/* 最高温度 */}
             <Text className="notoSansJP text-[36px] font-bold text-red">13</Text>
