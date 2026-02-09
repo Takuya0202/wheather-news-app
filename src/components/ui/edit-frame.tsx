@@ -1,6 +1,10 @@
 import { GlassView } from "expo-glass-effect";
-import { DimensionValue, View } from "react-native";
+import { DimensionValue, Pressable, View } from "react-native";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import { useRef } from "react";
+import BottomSheet from "@gorhom/bottom-sheet";
+import EditBottomSheet from "./edit-bottom-sheet";
+
 type Size = "small" | "medium" | "large";
 interface Props {
   size: Size;
@@ -22,18 +26,29 @@ const FRMAE_SIZE = {
 };
 export default function EditFrame({ size = "medium" }: Props) {
   const { width, height } = FRMAE_SIZE[size];
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  const handleOpenBottomSheet = () => {
+    bottomSheetRef.current?.expand();
+  };
+
   return (
-    <View className="w-full">
-      <GlassView
-        className="flex items-center justify-center rounded-[16px]"
-        style={{
-          width,
-          height,
-        }}
-        glassEffectStyle="clear"
-      >
-        <FontAwesome6 name="add" size={36} color="white" />
-      </GlassView>
-    </View>
+    <>
+      <View className="w-full">
+        <GlassView
+          className="flex items-center justify-center rounded-[16px]"
+          style={{
+            width,
+            height,
+          }}
+          glassEffectStyle="clear"
+        >
+          <Pressable onPress={handleOpenBottomSheet}>
+            <FontAwesome6 name="add" size={36} color="white" />
+          </Pressable>
+        </GlassView>
+      </View>
+      <EditBottomSheet ref={bottomSheetRef} size={size} />
+    </>
   );
 }
