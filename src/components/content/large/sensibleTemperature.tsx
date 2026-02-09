@@ -1,6 +1,7 @@
 import { Image, Text, View } from "@/components/index";
+import { TemperatureApi as TemperatureData } from "@/lib/index";
 
-export default function SensibleTemperature() {
+export default function SensibleTemperature({ data }: { data?: TemperatureData }) {
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">体感温度</Text>

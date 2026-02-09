@@ -16,6 +16,7 @@ export default function BigButton() {
     videoPlayer.loop = true;
     // 読み込まれたらビデオを再生
     videoPlayer.play();
+    videoPlayer.playbackRate = 0.3;
   });
 
   return (
