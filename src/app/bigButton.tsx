@@ -37,18 +37,28 @@ export default function BigButton() {
   });
 
   return (
-    <View className="relative flex-1 bg-black/20">
+    // edgesはスマホの余分な余白を制御するために使用し、今回はiphoneの画面上部にある切り欠き部分から避けるために使用
+    <SafeAreaView className="relative mb-[12px] flex-1 pt-[20px]" edges={["top"]}>
       {/* nativeControls={false}で動画のコントロールボタンを制御 */}
       <VideoView
         player={video}
         contentFit="cover"
         nativeControls={false}
         pointerEvents="none"
-        style={[StyleSheet.absoluteFill, { width: "100%", height: "100%", opacity: 0.6 }]}
+        style={[StyleSheet.absoluteFill, { width: "100%", height: "150%", opacity: 0.7 }]}
       />
-      <View className="flex h-full w-full flex-col items-center justify-center gap-4">
-        <LargeFrame />
-      </View>
-    </View>
+      <ScrollView
+        horizontal={false}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        bounces={false}
+        contentContainerClassName="items-center flex gap-4"
+      >
+        <View className="flex w-full flex-col items-center justify-center gap-4">
+          <MediumFrame />
+          <LargeFrame />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }

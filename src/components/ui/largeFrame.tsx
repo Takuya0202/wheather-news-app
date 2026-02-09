@@ -30,25 +30,17 @@ export default function LargeFrame() {
   ];
 
   return (
-    <View className="flex h-full w-width items-center rounded-[12px]">
-      <ScrollView
-        horizontal={false}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        bounces={false}
-        contentContainerClassName="items-center flex gap-4"
-      >
-        {largeFrameList.map((item, index) => (
-          <GlassView
-            key={index}
-            className="flex h-[257px] w-width items-center justify-center rounded-[12px]"
-            glassEffectStyle="clear"
-            style={styles.tintedGlassView}
-          >
-            {item}
-          </GlassView>
-        ))}
-      </ScrollView>
+    <View className="flex w-width items-center gap-[24px] rounded-[12px]">
+      {largeFrameList.map((item, index) => (
+        <GlassView
+          key={index}
+          className="flex h-[257px] w-width items-center justify-center rounded-[12px]"
+          glassEffectStyle="clear"
+          style={styles.tintedGlassView}
+        >
+          {item}
+        </GlassView>
+      ))}
     </View>
   );
 }
