@@ -19,7 +19,7 @@ export default function Config() {
         style={[StyleSheet.absoluteFill, { width: "100%", height: "100%" }]}
       />
       <View className="m-auto flex w-[94%] flex-1 flex-col items-start justify-center gap-3">
-        <EditFrame size="big" />
+        <EditFrame size="large" />
         <EditFrame size="medium" />
         <EditFrame size="small" />
       </View>

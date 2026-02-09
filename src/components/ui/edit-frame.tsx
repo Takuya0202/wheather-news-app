@@ -1,7 +1,7 @@
 import { GlassView } from "expo-glass-effect";
 import { DimensionValue, View } from "react-native";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-type Size = "small" | "medium" | "big";
+type Size = "small" | "medium" | "large";
 interface Props {
   size: Size;
 }
@@ -15,7 +15,7 @@ const FRMAE_SIZE = {
     width: "100%" as DimensionValue,
     height: 92,
   },
-  big: {
+  large: {
     width: "100%" as DimensionValue,
     height: 256,
   },

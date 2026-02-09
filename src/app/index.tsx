@@ -2,7 +2,6 @@ import { Text, View } from "react-native";
 import { Button } from "react-native";
 import { Link } from "expo-router";
 import EditFrame from "@/components/ui/edit-frame";
-import BigFrame from "@/components/ui/bigFrame";
 import { isLiquidGlassAvailable } from "expo-glass-effect";
 import ConfigButton from "@/components/ui/config-button";
 
@@ -24,7 +23,7 @@ export default function Index() {
       <Link href="/bigButton">bigButton</Link>
       <EditFrame size="small" />
       <EditFrame size="medium" />
-      <EditFrame size="big" />
+      <EditFrame size="large" />
       <ConfigButton />
     </View>
   );

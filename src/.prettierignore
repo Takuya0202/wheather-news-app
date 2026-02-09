@@ -27,3 +27,4 @@ nativewind-env.d.ts
 .git/
 coverage/
 .prettierrc
+assets/
