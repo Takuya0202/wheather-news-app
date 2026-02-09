@@ -2,10 +2,8 @@ import { VideoView, useVideoPlayer } from "expo-video";
 import { View, StyleSheet, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-// import LargeFrame from "@/components/ui/largeFrame";
-// import MediumFrame from "@/components/ui/mediumFrame";
-
-import SmallFrame from "@/components/ui/smallFrame";
+import LargeFrame from "@/components/ui/largeFrame";
+import MediumFrame from "@/components/ui/mediumFrame";
 
 // Force refresh
 const bgWhetherVideo = require("@/assets/whether-mov/45125_960x540.mp4");
@@ -38,7 +36,8 @@ export default function BigButton() {
         contentContainerClassName="items-center flex gap-4"
       >
         <View className="flex w-full flex-col items-center justify-center gap-4">
-          <SmallFrame />
+          <MediumFrame />
+          <LargeFrame />
         </View>
       </ScrollView>
     </SafeAreaView>
