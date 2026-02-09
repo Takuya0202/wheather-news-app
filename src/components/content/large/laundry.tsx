@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@/components/index";
-import { LaundryApi as LaundryData } from "@/lib/index";
+import { useWhetherStore } from "@/store/whetherStore";
 
-export default function Laundry({ data }: { data?: LaundryData }) {
+export default function Laundry() {
+  const data = useWhetherStore((state) => state.laundry);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">洗濯</Text>

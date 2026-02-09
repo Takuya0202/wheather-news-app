@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@/components/index";
-import { RainApi as RainData } from "@/lib/index";
+import { useWhetherStore } from "@/store/whetherStore";
 
-export default function PrecipitationProbability({ data }: { data?: RainData }) {
+export default function PrecipitationProbability() {
+  const data = useWhetherStore((state) => state.rain);
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">降水確率</Text>
