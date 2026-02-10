@@ -1,6 +1,9 @@
 import { Image, Text, View } from "@/components/index";
+import { useWhetherStore } from "@/store/whetherStore";
+import { getStatusIcon } from "@/lib";
 
 export default function Stimulation() {
+  const data = useWhetherStore((state) => state.atomos);
   return (
     <View className="flex justify-between p-2">
       <Text className="text-center font-notoSansJP text-[20px] text-[#000000]">刺激</Text>
@@ -13,7 +16,7 @@ export default function Stimulation() {
       <View className="flex flex-row items-baseline justify-center">
         <View className="flex flex-row items-baseline gap-2">
           <Image
-            source={require("@/assets/whether-img/triangle.svg")}
+            source={getStatusIcon(data?.status)}
             className="h-[40px] w-[40px]"
             contentFit="contain"
           />

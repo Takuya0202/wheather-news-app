@@ -18,7 +18,7 @@ export default function SensibleTemperature() {
           <Text className=" notoSansJP text-[16px] text-blue">最低</Text>
           <View className="flex flex-row items-baseline">
             {/* 最低温度 */}
-            <Text className="notoSansJP text-[36px] font-bold text-blue">13</Text>
+            <Text className="notoSansJP text-[36px] font-bold text-blue">{data?.min_temp}</Text>
             <Text className="notoSansJP text-[24px] font-bold text-blue">℃</Text>
           </View>
         </View>
@@ -26,7 +26,7 @@ export default function SensibleTemperature() {
           <Text className=" notoSansJP text-[16px] text-red">最高</Text>
           <View className="flex flex-row items-baseline">
             {/* 最高温度 */}
-            <Text className="notoSansJP text-[36px] font-bold text-red">13</Text>
+            <Text className="notoSansJP text-[36px] font-bold text-red">{data?.max_temp}</Text>
             <Text className="notoSansJP text-[24px] font-bold text-red">℃</Text>
           </View>
         </View>
