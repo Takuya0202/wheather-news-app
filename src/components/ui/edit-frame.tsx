@@ -2,19 +2,21 @@ import { GlassView } from "expo-glass-effect";
 import { DimensionValue, Pressable, View } from "react-native";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import { useRef } from "react";
-import BottomSheet from "@gorhom/bottom-sheet";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
 import EditBottomSheet from "./edit-bottom-sheet";
+import { ContentSize, ContentType } from "@/types/layout";
 
-type Size = "small" | "medium" | "large";
 interface Props {
-  size: Size;
+  size: ContentSize;
+  onAddContent: (contentType: ContentType, size: ContentSize) => void;
+  existingContentTypes: ContentType[];
 }
-const FRMAE_SIZE = {
+
+const FRAME_SIZE = {
   small: {
     width: 160,
     height: 192,
   },
-  // n%表記はstring判定で型エラーになるため、DimensionValueのリテラル型を使用
   medium: {
     width: "100%" as DimensionValue,
     height: 92,
@@ -24,12 +26,17 @@ const FRMAE_SIZE = {
     height: 256,
   },
 };
-export default function EditFrame({ size = "medium" }: Props) {
-  const { width, height } = FRMAE_SIZE[size];
-  const bottomSheetRef = useRef<BottomSheet>(null);
+
+export default function EditFrame({ size = "medium", onAddContent, existingContentTypes }: Props) {
+  const { width, height } = FRAME_SIZE[size];
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
 
   const handleOpenBottomSheet = () => {
-    bottomSheetRef.current?.expand();
+    bottomSheetRef.current?.present();
+  };
+
+  const handleSelectContent = (contentType: string) => {
+    onAddContent(contentType as ContentType, size);
   };
 
   return (
@@ -48,7 +55,12 @@ export default function EditFrame({ size = "medium" }: Props) {
           </Pressable>
         </GlassView>
       </View>
-      <EditBottomSheet ref={bottomSheetRef} size={size} />
+      <EditBottomSheet
+        ref={bottomSheetRef}
+        size={size}
+        onSelectContent={handleSelectContent}
+        existingContentTypes={existingContentTypes}
+      />
     </>
   );
 }
