@@ -1,7 +1,9 @@
 import { Image, Text, View } from "@/components/index";
-import { TemperatureApi as TemperatureData } from "@/lib/index";
+import { useWeatherStore } from "@/store/weatherStore";
 
-export default function Temperature({ data }: { data?: TemperatureData }) {
+export default function Temperature() {
+  const data = useWeatherStore((state) => state.data?.temperature);
+
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">気温</Text>

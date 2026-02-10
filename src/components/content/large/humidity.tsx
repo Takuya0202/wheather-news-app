@@ -1,7 +1,9 @@
 import { Image, Text, View } from "@/components/index";
-import { HumidityApi as HumidityData } from "@/lib/index";
+import { useWeatherStore } from "@/store/weatherStore";
 
-export default function Humidity({ data }: { data?: HumidityData }) {
+export default function Humidity() {
+  const data = useWeatherStore((state) => state.data?.humidity);
+
   return (
     <View>
       <Text className="text-center font-notoSansJP text-[28px] text-[#000000]">湿度</Text>

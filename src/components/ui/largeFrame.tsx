@@ -42,7 +42,7 @@ export default function LargeFrame() {
   ];
 
   return (
-    <View className="flex w-width items-center gap-[24px] rounded-[12px]">
+    <View className="flex w-full items-center gap-[24px] rounded-[12px]">
       {largeFrameList.map((item, index) => (
         <GlassView
           key={index}

@@ -31,7 +31,7 @@ export default function SmallFrame() {
 
   return (
     // flex-row と flex-wrap を使って2列に並べる
-    <View className="flex w-width flex-row flex-wrap justify-between gap-y-[24px]">
+    <View className="flex w-full flex-row flex-wrap justify-between gap-y-[24px]">
       {smallFrameList.map((item, index) => (
         <GlassView
           key={index}

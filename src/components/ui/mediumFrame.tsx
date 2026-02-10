@@ -29,11 +29,11 @@ export default function MediumFrame() {
   ];
 
   return (
-    <View className="flex w-width items-center gap-[24px] rounded-[12px]">
+    <View className="flex w-full items-center gap-[24px] rounded-[12px]">
       {mediumFrameList.map((item, index) => (
         <GlassView
           key={index}
-          className="flex h-[122px] w-width items-center rounded-[12px]"
+          className="flex h-[122px] w-full items-center rounded-[12px]"
           glassEffectStyle="clear"
           style={styles.tintedGlassView}
         >

@@ -4,6 +4,7 @@ import { cssInterop } from "nativewind";
 import "../global.css";
 import { GlassView } from "expo-glass-effect";
 import { Image } from "expo-image";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 cssInterop(View, {
   className: "style",
@@ -17,12 +18,14 @@ cssInterop(Image, {
 
 export default function RootLayout() {
   return (
-    <View className="flex-1">
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      />
-    </View>
+    <GestureHandlerRootView>
+      <View className="flex-1">
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        />
+      </View>
+    </GestureHandlerRootView>
   );
 }
