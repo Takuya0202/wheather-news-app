@@ -74,3 +74,16 @@ export default async function fetchWeather(): Promise<WeatherData | undefined> {
     throw error;
   }
 }
+
+export function getStatusIcon(status: number) {
+  switch (status) {
+    case 1:
+      return require("@/assets/whether-img/circle.svg");
+    case 2:
+      return require("@/assets/whether-img/triangle.svg");
+    case 3:
+      return require("@/assets/whether-img/cross.svg");
+    default:
+      return require("@/assets/whether-img/circle.svg");
+  }
+}
