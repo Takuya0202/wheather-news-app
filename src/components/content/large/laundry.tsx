@@ -1,5 +1,6 @@
 import { Image, Text, View } from "@/components/index";
 import { useWhetherStore } from "@/store/whetherStore";
+import { getStatusIcon } from "@/lib";
 
 export default function Laundry() {
   const data = useWhetherStore((state) => state.laundry);
@@ -12,16 +13,15 @@ export default function Laundry() {
           className="h-[130px] w-[130px]"
         />
       </View>
-      <View className="flex w-[235px] flex-row items-center justify-between">
-        <View className="flex flex-row items-baseline gap-2">
-          {/* 後にステータスごとに表示を切り替えるようにする */}
+      <View className="flex w-[250px] flex-row items-center justify-between gap-1">
+        <View className="flex flex-row items-baseline">
           <Image
-            source={require("@/assets/whether-img/triangle.svg")}
-            className="h-[55px] w-[55px]"
+            source={getStatusIcon(data?.status)}
+            className="h-[44px] w-[44px]"
             contentFit="contain"
           />
         </View>
-        <Text className="notoSansJP w-[110px] text-[24px] text-[#000000]">{data?.message}</Text>
+        <Text className="notoSansJP w-full text-[24px] text-[#000000]">{data?.message}</Text>
       </View>
     </View>
   );
