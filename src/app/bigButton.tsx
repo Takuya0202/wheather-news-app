@@ -4,6 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useEffect, useState } from "react";
 
 import LargeFrame from "@/components/ui/largeFrame";
+import MediumFrame from "@/components/ui/mediumFrame";
+import SmallFrame from "@/components/ui/smallFrame";
 import fetchWeather from "@/lib";
 import { useWhetherStore } from "@/store/whetherStore";
 
@@ -57,6 +59,7 @@ export default function BigButton() {
         <View className="flex w-full flex-col items-center justify-center gap-4">
           <MediumFrame />
           <LargeFrame />
+          <SmallFrame />
         </View>
       </ScrollView>
     </SafeAreaView>
